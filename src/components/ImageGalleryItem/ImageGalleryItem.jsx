@@ -16,13 +16,15 @@ export const ImageGalleryItem = ({ item }) => {
   };
 
   return (
-    <Item onClick={openModal}>
-      <Img src={item.webformatURL} alt={item.tags} />
+    <>
+      <Item onClick={openModal}>
+        <Img src={item.webformatURL} alt={item.tags} />
+      </Item>
       <ModalComponent
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         item={item}
       />
-    </Item>
+    </>
   );
 };
