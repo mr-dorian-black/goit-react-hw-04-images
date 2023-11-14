@@ -29,7 +29,7 @@ export const App = props => {
           return alert('Not found');
         }
 
-        setImages([...images, ...imagesData.hits]);
+        setImages(prevImages => [...prevImages, ...imagesData.hits]);
         setHasMore(page < Math.ceil(imagesData.totalHits / 12));
       } catch (error) {
         setError(true);
