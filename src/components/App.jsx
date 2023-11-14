@@ -55,7 +55,11 @@ export const App = props => {
       <Searchbar onSubmit={handleSubmit} />
       {images.length !== 0 && <ImageGallery list={images} />}
       {loader && <Loader />}
-      {hasMore && <Button loadMore={handleLoadMore} />}
+      {error ? (
+        <div>Error! Reload the page please!</div>
+      ) : (
+        hasMore && <Button loadMore={handleLoadMore} />
+      )}
     </AppStyled>
   );
 };
